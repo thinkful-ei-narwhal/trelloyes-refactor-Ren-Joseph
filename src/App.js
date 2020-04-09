@@ -44,9 +44,15 @@ class App extends React.Component {
   }
 
   deleteReference = (id) => {
-    let arr = this.state.lists.filter(item => item.cardIds[id] === id)
+    let newLists = this.state.lists.map(list => {
+      return {
+        id: list.id,
+        header: list.header,
+        cardIds: list.cardIds.filter(item => item !== id)
+      }
+    })
     this.setState({
-      lists: arr
+      lists: newLists
     })
   }
 
