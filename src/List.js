@@ -5,12 +5,17 @@ import './List.css';
 export default function List(props) {
   return (
     <section className="List">
-      <header className="List-header">
-        {props.header}
-      </header>
+      <header className="List-header">{props.header}</header>
       <div className="List-cards">
-        {props.cards.map(card => (
-          <Card 
+        <button
+          onClick={() => {
+            props.addCard(props.id);
+          }}
+        >
+          Create Card
+        </button>
+        {props.cards.map((card) => (
+          <Card
             key={card.id}
             id={card.id}
             title={card.title}
@@ -21,4 +26,4 @@ export default function List(props) {
       </div>
     </section>
   );
-};
+}
