@@ -3,10 +3,10 @@ import './Card.css';
 
 export default function Card(props) {
   return (
-    <div className="Card">
+    <div className="Card" key={props.id}>
       <h3>{props.title}</h3>
       <p>{props.content}</p>
-      <button onClick={() => {}}>Delete</button>
+      <button onClick={props.deleteButton}>Delete</button>
     </div>
   );
 };

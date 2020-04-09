@@ -44,15 +44,13 @@ class App extends React.Component {
   }
 
   deleteReference = (id) => {
-    const newArr = this.state.lists.filter(item => item.cardIds[id] === id)
+    let arr = this.state.lists.filter(item => item.cardIds[id] === id)
     this.setState({
-      lists: newArr
+      lists: arr
     })
   }
 
   render() {
-    this.deleteReference('l')
-    console.log(this.state.lists)
     return (
       <main className="App">
         <header className="App-header">
@@ -64,6 +62,7 @@ class App extends React.Component {
               key={list.id}
               header={list.header}
               cards={list.cardIds.map(id => this.state.allCards[id])}
+              deleteButton={this.deleteReference}
             />
           ))}
         </div>
