@@ -1,4 +1,4 @@
-const STORE = {
+let STORE = {
   lists: [
     {
       id: '1',

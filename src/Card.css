@@ -21,7 +21,7 @@
 }
 
 .Card button {
-  float: right;
+  margin-left: 120px;
   background-color: #eff1f3;
   border-radius: 6px;
 }
